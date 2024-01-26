@@ -11,10 +11,12 @@ public class WkwkLaser : MonoBehaviour
     [SerializeField] private float ProjectileDespawnTime;
     [SerializeField] private int TickNumber;
     [SerializeField] private float TickSpeed;
+    private TopDownController TopDown;
     private bool canWkwkAttack;
     void Start()
     {
         canWkwkAttack = true;
+        TopDown = GetComponent<TopDownController>();
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class WkwkLaser : MonoBehaviour
         {
             //WkwkAttack();
             canWkwkAttack = false;
+            TopDown.disableRotation= true;
             StartCoroutine(AttackCooldown(AttackCooldownTime, TickSpeed, TickNumber));
         }
     }
@@ -44,13 +47,16 @@ public class WkwkLaser : MonoBehaviour
             GameObject laser = Instantiate(WkwkLaserPrefab, ProjectileSpawnPosition.position, transform.rotation);
             StartCoroutine(DespawnProjectile(ProjectileDespawnTime, laser));
         }
+        TopDown.disableRotation = false;
         yield return new WaitForSeconds(CooldownTime);
+        
         canWkwkAttack = true;
     }
 
     IEnumerator DespawnProjectile(float DespawnTime, GameObject laser)
     {
         yield return new WaitForSeconds(DespawnTime);
+        
         Destroy(laser);
     }
 }

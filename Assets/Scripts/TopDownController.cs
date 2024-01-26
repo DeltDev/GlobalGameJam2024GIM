@@ -10,9 +10,11 @@ public class TopDownController : MonoBehaviour
     private float moveHorizontal;
     private float moveVertical;
     private float angle;
+    public bool disableRotation;
     private void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        disableRotation= false;
     }
     private void Update()
     {
@@ -22,7 +24,7 @@ public class TopDownController : MonoBehaviour
         Movement.Normalize();
         rb2D.velocity= Movement *MoveSpeed;
 
-        if(Movement != Vector2.zero)
+        if(Movement != Vector2.zero && !disableRotation)
         {
             angle = Mathf.Atan2(Movement.y,Movement.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0,0,angle);

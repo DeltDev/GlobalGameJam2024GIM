@@ -9,6 +9,7 @@ public class TopDownController : MonoBehaviour
     private Rigidbody2D rb2D;
     private float moveHorizontal;
     private float moveVertical;
+    private float angle;
     private void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
@@ -17,10 +18,14 @@ public class TopDownController : MonoBehaviour
     {
         moveHorizontal = Input.GetAxisRaw("Horizontal");
         moveVertical = Input.GetAxisRaw("Vertical");
-        Debug.Log(moveHorizontal);
+        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+        movement.Normalize();
+        rb2D.velocity = movement * MoveSpeed;
+        if(movement != Vector2.zero)
+        {
+            angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
     }
-    private void FixedUpdate()
-    {
-        rb2D.velocity = new Vector2(moveHorizontal * MoveSpeed, moveVertical*MoveSpeed);
-    }
+
 }

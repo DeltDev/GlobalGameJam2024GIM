@@ -18,14 +18,15 @@ public class TopDownController : MonoBehaviour
     {
         moveHorizontal = Input.GetAxisRaw("Horizontal");
         moveVertical = Input.GetAxisRaw("Vertical");
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-        movement.Normalize();
-        rb2D.velocity = movement * MoveSpeed;
-        if(movement != Vector2.zero)
+        Vector2 Movement = new Vector2(moveHorizontal, moveVertical);
+        Movement.Normalize();
+        rb2D.velocity= Movement *MoveSpeed;
+
+        if(Movement != Vector2.zero)
         {
-            angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle);
+            angle = Mathf.Atan2(Movement.y,Movement.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0,0,angle);
         }
     }
-
+    
 }

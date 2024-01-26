@@ -673,10 +673,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e81a9947dc9b542a2577499ba9a0a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WkwkLaserPrefab: {fileID: 4525463830418648847, guid: 9dbdf1ea8c732ed4a8f05acca9458863, type: 3}
+  WkwkLaserPrefab: {fileID: 1048996829930901123, guid: 9dbdf1ea8c732ed4a8f05acca9458863, type: 3}
   ProjectileSpawnPosition: {fileID: 1878968974}
-  AttackCooldownTime: 0.5
-  ProjectileDespawnTime: 0.5
+  AttackCooldownTime: 2
+  ProjectileDespawnTime: 0.1
+  TickNumber: 10
+  TickSpeed: 0.1
 --- !u!114 &1626637197
 MonoBehaviour:
   m_ObjectHideFlags: 0

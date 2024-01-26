@@ -5,7 +5,7 @@ using UnityEngine;
 public class BirjonProjectile : MonoBehaviour
 {
 
-    public bool isLaunched = false; 
+    private bool isLaunched = false; 
     private Vector2 direction;
     private Vector2 perpendicularDirection;
     private float projSpeed;
@@ -31,5 +31,15 @@ public class BirjonProjectile : MonoBehaviour
         float timeElapsed = Time.time - startTime;
         float yOffSet = Mathf.Sin(timeElapsed * frequency) * amplitude;
         transform.position += (Vector3) perpendicularDirection * yOffSet * Time.deltaTime;        
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log("Triggered");
+        if (other.CompareTag("Player")) {
+            // other.GetComponent<PlayerController>().TakeDamage(1);
+            // Destroy(gameObject);
+        } else {
+            Destroy(gameObject);
+        }
     }
 }

@@ -493,7 +493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 828352892}
   m_Layer: 5
-  m_Name: PrologueUI
+  m_Name: EpilogueUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -612,17 +612,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 736085334}
   lines:
-  - "Once upon a time, there existed a creature feared by the citizens of the Laughing
-    Isles\u2026"
-  - ...an amalgamation of floating laughter called the HAHA-man.
-  - "One day, a brave warrior named Pepega set out on a journey to take down the
-    HAHA-man once and for all\u2026"
-  - and restore all the laughter for the citizens in the isles.
-  - He ventured into a cave beneath the mountains to face the HAHA-man and his laughing
-    armies.
-  - "Pepega has to go through THREE of his so-called laugh masters\u2026"
-  - "\u2026and then defeat the HAHA-man to earn his people\u2019s stolen joy."
+  - Pepega finally returns to his village, and when he gets there, the villagers
+    are suddenly able to laugh again.
+  - He knows his mission is accomplished. The laughing isles have gotten their laughter
+    back.
   textSpeed: 0.025
+  TransitionAnimation: {fileID: 0}
+  LevelLoaderGameObject: {fileID: 0}
 --- !u!1 &1340295683
 GameObject:
   m_ObjectHideFlags: 0

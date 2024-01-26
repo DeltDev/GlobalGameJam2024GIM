@@ -11,8 +11,15 @@ public class DialogueManager : MonoBehaviour
 
     private int index;
 
+    public LevelLoader TransitionAnimation;
+    public GameObject LevelLoaderGameObject;
+
+    
+
     void Start()
     {
+        LevelLoaderGameObject = GameObject.Find("LevelLoader");
+        TransitionAnimation = LevelLoaderGameObject.GetComponent<LevelLoader>();
         textComponent.text = string.Empty;
         StartDialogue();
     }
@@ -59,6 +66,9 @@ public class DialogueManager : MonoBehaviour
         } else
         {
             gameObject.SetActive(false);
+            TransitionAnimation.LoadNextLevel();
+            FindObjectOfType<AudioManager>().PlaySound("ButtonClick");
+
         }
     }
 

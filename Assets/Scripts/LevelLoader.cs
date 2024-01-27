@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
     public Animator transition;
-
+ 
     public void LoadNextLevel()
     {
         Debug.Log("Animation Loaded");
@@ -23,4 +23,5 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(LevelIdx);
     }
+
 }

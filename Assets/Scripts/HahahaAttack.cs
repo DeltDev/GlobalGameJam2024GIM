@@ -19,10 +19,15 @@ public class HahahaAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && canHahahaAttack){
-            HahahahaAttack();
-            canHahahaAttack= false;
-            StartCoroutine(AttackCooldown(AttackCooldownTime));
+        if (!PauseMenu.isPaused)
+        {
+            if (Input.GetMouseButtonDown(0) && canHahahaAttack)
+            {
+                HahahahaAttack();
+                canHahahaAttack = false;
+                StartCoroutine(AttackCooldown(AttackCooldownTime));
+            }
+            
         }
     }
 

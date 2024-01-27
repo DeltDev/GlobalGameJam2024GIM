@@ -17,13 +17,17 @@ public class TouchGrassAttack : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G) && canGrassAttack)
+        if (!PauseMenu.isPaused)
         {
-            GrassHitbox.SetActive(true);
-            canGrassAttack= false;
-            StartCoroutine(TouchGrassDuration(TouchGrassDurationTime));
-            StartCoroutine(TouchGrassCooldown(TouchGrassCooldownTime));
+            if (Input.GetKeyDown(KeyCode.G) && canGrassAttack)
+            {
+                GrassHitbox.SetActive(true);
+                canGrassAttack = false;
+                StartCoroutine(TouchGrassDuration(TouchGrassDurationTime));
+                StartCoroutine(TouchGrassCooldown(TouchGrassCooldownTime));
+            }
         }
+        
     }
     IEnumerator TouchGrassDuration(float Duration)
     {

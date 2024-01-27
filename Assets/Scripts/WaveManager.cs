@@ -74,9 +74,9 @@ public class WaveManager : MonoBehaviour
         }
         waveNumber++;
         if (waveNumber > startSpawningFasterAfterWave) { 
-            idleBetweenWave -= 0.2f; Mathf.Clamp(idleBetweenWave, 1f, 100f);
-            spawnDelayInWave -= 0.15f; Mathf.Clamp(spawnDelayInWave, 0.8f, 100f);
-            maxWaveSpawnDelay -= 0.8f; Mathf.Clamp(maxWaveSpawnDelay, 5f, 100f);
+            idleBetweenWave -= 0.2f; idleBetweenWave = Mathf.Clamp(idleBetweenWave, 1.2f, 100f);
+            spawnDelayInWave -= 0.15f; spawnDelayInWave = Mathf.Clamp(spawnDelayInWave, 0.3f, 100f);
+            maxWaveSpawnDelay -= 0.6f; maxWaveSpawnDelay = Mathf.Clamp(maxWaveSpawnDelay, 5f, 100f);
         }
 
         autoSpawnCoroutine = StartCoroutine(InitNextSpawn());

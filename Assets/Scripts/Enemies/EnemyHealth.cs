@@ -47,9 +47,20 @@ public class EnemyHealth : MonoBehaviour
     {
         if (collision.tag == "Projectile")
         {
+            TakeDamage(50);
+        }
+        if (collision.tag == "Laser")
+        {
+            TakeDamage(10);
+        }
+    }
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "GrassHitboxArea")
+        {
             TakeDamage(1);
         }
     }
 
-    
+
 }

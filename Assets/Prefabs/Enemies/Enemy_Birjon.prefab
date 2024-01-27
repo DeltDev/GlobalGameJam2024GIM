@@ -393,6 +393,7 @@ GameObject:
   - component: {fileID: 7382127829774352730}
   - component: {fileID: 5746512878313084407}
   - component: {fileID: 1949573986}
+  - component: {fileID: 2067104488}
   m_Layer: 0
   m_Name: Enemy_Birjon
   m_TagString: Untagged
@@ -478,12 +479,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77f98f0546540944b1fa4ee81fae239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 10
+  MaxHealth: 300
   CurrentHealth: 1
-  PlayerCollider: {fileID: 5746512878313084407}
   slider: {fileID: 1236580512}
   Self: {fileID: 7382127829774352728}
   audioManager: {fileID: 0}
+--- !u!50 &2067104488
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7382127829774352728}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &7382127830826395028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -493,7 +514,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2253911629886400664, guid: a9f123864b4132d41a06fef182e70977, type: 3}
       propertyPath: m_Name
-      value: Birjon
+      value: Model
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: a9f123864b4132d41a06fef182e70977, type: 3}
       propertyPath: m_SortingOrder

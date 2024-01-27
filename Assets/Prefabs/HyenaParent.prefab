@@ -513,7 +513,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91956141fbf1a7a47bfd1eb27055064e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   speed: 2
   rotationSpeed: 155
   projectilePrefab: {fileID: 6684732563116971704, guid: a48b8df1e7aa02c4ab16ed35500c206b, type: 3}
@@ -533,10 +532,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 10
   CurrentHealth: 1
-  PlayerCollider: {fileID: 6593979560937692932, guid: 339b1c6b88a46fc4bbfff08d1d377b3e, type: 3}
   slider: {fileID: 3078147024008517941}
-  levelLoader: {fileID: 0}
   Self: {fileID: 3250405836840960139}
+  audioManager: {fileID: 0}
 --- !u!1 &5594523739313804495
 GameObject:
   m_ObjectHideFlags: 0

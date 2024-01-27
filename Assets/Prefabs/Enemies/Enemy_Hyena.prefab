@@ -581,9 +581,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77f98f0546540944b1fa4ee81fae239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 10
+  MaxHealth: 200
   CurrentHealth: 1
-  PlayerCollider: {fileID: 6593979560937692932, guid: 339b1c6b88a46fc4bbfff08d1d377b3e, type: 3}
   slider: {fileID: 1851298493305169667}
   Self: {fileID: 3421088123789977031}
   audioManager: {fileID: 0}

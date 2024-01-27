@@ -9,6 +9,8 @@ TagManager:
   - Wall
   - EnemyProjectile
   - Laser
+  - Undefined
+  - Enemy
   layers:
   - Default
   - TransparentFX

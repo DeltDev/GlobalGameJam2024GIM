@@ -26,15 +26,20 @@ public class Birjon : MonoBehaviour
     private IEnumerator LaunchProjectiles() {
         yield return new WaitForSeconds(attackDelay);
 
-        Vector2 direction = (player.position - transform.position).normalized;
-        for (int i = 0; i < numOfProjectiles; i++) {
-            GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            projectile.GetComponent<BirjonProjectile>().Launch(
-                direction, projSpeed, amplitude: amplitude, frequency: frequency
-            );
-            yield return new WaitForSeconds(delayBetweenProjectiles);
-        }   
-        yield return new WaitForSeconds(postAttackDelay);
+        if (player)
+        {
+            Vector2 direction = (player.position - transform.position).normalized;
+            for (int i = 0; i < numOfProjectiles; i++)
+            {
+                GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+                projectile.GetComponent<BirjonProjectile>().Launch(
+                    direction, projSpeed, amplitude: amplitude, frequency: frequency
+                );
+                yield return new WaitForSeconds(delayBetweenProjectiles);
+            }
+            yield return new WaitForSeconds(postAttackDelay);
+        }
+        
     }
     
     private IEnumerator StartAttack() {

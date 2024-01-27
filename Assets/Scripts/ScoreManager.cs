@@ -33,7 +33,11 @@ public class ScoreManager : MonoBehaviour
     {
         score += scoreGained;
         scoreText.text = "Score : " + score.ToString();
-        PlayerPrefs.SetInt("highscore", ScoreManager.instance.GetScore());
+        if (ScoreManager.instance.GetHighScore() < ScoreManager.instance.GetScore())
+        {
+            PlayerPrefs.SetInt("highscore", ScoreManager.instance.GetScore());
+        }
+            
 
     }
 

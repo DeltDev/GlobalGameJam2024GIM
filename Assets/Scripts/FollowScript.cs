@@ -14,6 +14,7 @@ public class FollowScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!host) return;
         transform.position = new Vector3(host.transform.position.x, host.transform.position.y + 0.8f, 0);
     }
 }

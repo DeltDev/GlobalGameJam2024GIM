@@ -44,7 +44,7 @@ public class PlayerHealth : MonoBehaviour
         {
             audioManager.PlaySound("GameOverSFX");
             Destroy(GameObject.Find("Player"));
-            levelLoader.GetComponent<LevelLoader>().RestartLevel();
+            levelLoader.GetComponent<LevelLoader>().LoadNextLevel();
         }
     }
     

@@ -11,6 +11,7 @@ TagManager:
   - Laser
   - Undefined
   - Enemy
+  - ExtraHP
   layers:
   - Default
   - TransparentFX

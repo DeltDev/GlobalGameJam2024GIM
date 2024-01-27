@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public Slider slider;
     public GameObject levelLoader;
     private float fillvalue;
+    public float HealthGain;
     [SerializeField] private AudioManager audioManager;
     void Start()
     {
@@ -53,6 +54,15 @@ public class PlayerHealth : MonoBehaviour
         if(collision.tag == "EnemyProjectile")
         {
             TakeDamage(1);
+        }
+        if (collision.tag == "ExtraHP")
+        {
+            TakeDamage(-HealthGain);
+            Destroy(collision.gameObject);
+            if (CurrentHealth > MaxHealth)
+            {
+                CurrentHealth = MaxHealth;
+            }
         }
     }
 }

@@ -285,6 +285,8 @@ GameObject:
   - component: {fileID: 6593979560937692932}
   - component: {fileID: 6593979560937692935}
   - component: {fileID: 6593979560937692934}
+  - component: {fileID: 4229986393048367552}
+  - component: {fileID: 6448087704897971972}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -376,6 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 5
+  disableRotation: 0
 --- !u!50 &6593979560937692937
 Rigidbody2D:
   serializedVersion: 4
@@ -471,6 +474,39 @@ MonoBehaviour:
   TouchGrassDurationTime: 10
   TouchGrassCooldownTime: 15
   GrassHitbox: {fileID: 6593979560261327599}
+--- !u!114 &4229986393048367552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6593979560937692943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e81a9947dc9b542a2577499ba9a0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WkwkLaserPrefab: {fileID: 1048996829930901123, guid: 9dbdf1ea8c732ed4a8f05acca9458863, type: 3}
+  ProjectileSpawnPosition: {fileID: 6593979560888030723}
+  AttackCooldownTime: 3
+  ProjectileDespawnTime: 0.1
+  TickNumber: 10
+  TickSpeed: 0.1
+--- !u!114 &6448087704897971972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6593979560937692943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09fee94bef6754b4c89adf84f801f212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCollider: {fileID: 6593979560937692932}
+  CooldownTime: 10
+  DespawnTime: 1
 --- !u!1001 &2359995480888335747
 PrefabInstance:
   m_ObjectHideFlags: 0

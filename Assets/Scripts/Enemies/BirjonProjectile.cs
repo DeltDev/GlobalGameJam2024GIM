@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BirjonProjectile : MonoBehaviour
 {
-
     private bool isLaunched = false; 
     private Vector2 direction;
     private Vector2 perpendicularDirection;
@@ -34,12 +31,15 @@ public class BirjonProjectile : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("Triggered");
         if (other.CompareTag("Player")) {
             // other.GetComponent<PlayerController>().TakeDamage(1);
             // Destroy(gameObject);
-        } else {
+        } else if (other.CompareTag("Wall")) {
             Destroy(gameObject);
         }
+    }
+
+    private void OnBecameInvisible() {
+        Destroy(gameObject);
     }
 }

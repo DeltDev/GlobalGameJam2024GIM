@@ -6,6 +6,7 @@ public class Birjon : MonoBehaviour
 {
     public Transform player;
     [Header("Birjon Settings")]
+    public float speed = 1f;
     public float distanceToStartAttack = 1f;
     public float attackDelay = 1.2f;
     public float postAttackDelay = 0.8f;
@@ -43,7 +44,7 @@ public class Birjon : MonoBehaviour
         if (isAttacking) return;
         
         Vector2 distanceVector = player.position - transform.position;
-        transform.position += (Vector3) distanceVector.normalized * Time.deltaTime;
+        transform.position += (Vector3) distanceVector.normalized * Time.deltaTime * speed;
 
         transform.rotation = Quaternion.Euler(0, distanceVector.x < 0 ? 0 : 180, 0);
 

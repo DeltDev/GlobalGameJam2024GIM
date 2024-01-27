@@ -12,9 +12,11 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private Slider slider;
     public GameObject levelLoader;
     public GameObject Self;
+    [SerializeField] private AudioManager audioManager;
     void Start()
     {
         CurrentHealth = MaxHealth;
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         //levelLoader = GameObject.Find("LevelLoader");
     }
 
@@ -33,8 +35,10 @@ public class EnemyHealth : MonoBehaviour
     {
         CurrentHealth -= amount;
         UpdateHealthBar(MaxHealth, CurrentHealth);
+        audioManager.PlaySound("DamageSFX");
         if (CurrentHealth <= 0)
         {
+            
             Destroy(Self);
             levelLoader.GetComponent<LevelLoader>().LoadNextLevel();
         }

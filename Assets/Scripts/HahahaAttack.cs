@@ -11,8 +11,10 @@ public class HahahaAttack : MonoBehaviour
     [SerializeField] private float AttackCooldownTime;
     [SerializeField] private float ProjectileDespawnTime;
     private bool canHahahaAttack;
+    [SerializeField] private AudioManager audioManager;
     void Start()
     {
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         canHahahaAttack= true;
     }
 
@@ -33,6 +35,7 @@ public class HahahaAttack : MonoBehaviour
 
     void HahahahaAttack()
     {
+        audioManager.PlaySound("HAHAHAHASFX");
         GameObject bullet = Instantiate(HahahaProjectilePrefab, ProjectileSpawnPosition.position, transform.rotation);
         Rigidbody2D rb2D = bullet.GetComponent<Rigidbody2D>();
         rb2D.AddForce(ProjectileSpawnPosition.right * ProjectileForce, ForceMode2D.Impulse);

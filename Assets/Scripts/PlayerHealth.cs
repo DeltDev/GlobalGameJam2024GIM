@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public Slider slider;
     public GameObject levelLoader;
     private float fillvalue;
+    [SerializeField] private AudioManager audioManager;
     void Start()
     {
         //slider = GetComponent<slider>();
@@ -20,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
         slider.value = MaxHealth;
         CurrentHealth = MaxHealth;
         levelLoader = GameObject.Find("LevelLoader");
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -30,6 +32,7 @@ public class PlayerHealth : MonoBehaviour
 
     void TakeDamage(float amount)
     {
+        audioManager.PlaySound("DamageSFX");
         CurrentHealth -= amount;
         float fillvalue = CurrentHealth / MaxHealth;
         slider.value = fillvalue;
@@ -39,6 +42,7 @@ public class PlayerHealth : MonoBehaviour
         }
         if(CurrentHealth <= 0)
         {
+            audioManager.PlaySound("GameOverSFX");
             Destroy(GameObject.Find("Player"));
             levelLoader.GetComponent<LevelLoader>().RestartLevel();
         }

@@ -668,6 +668,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}
+--- !u!1 &286231299 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8401051595463965807, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}
+  m_PrefabInstance: {fileID: 286231298}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &286231300 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3335275439454108977, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}
+  m_PrefabInstance: {fileID: 286231298}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d19348cbdae31942ad5a38fc77c53bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &664605344
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,8 +986,8 @@ MonoBehaviour:
   scoreText: {fileID: 1838007465}
   isHighScoreText: {fileID: 1407370633}
   highScoreObject: {fileID: 1051148295}
-  levelLoader: {fileID: 0}
-  audioManager: {fileID: 0}
+  levelLoader: {fileID: 286231299}
+  audioManager: {fileID: 286231300}
 --- !u!4 &853923020
 Transform:
   m_ObjectHideFlags: 0

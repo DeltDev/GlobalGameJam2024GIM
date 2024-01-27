@@ -43,8 +43,13 @@ public class TopDownController : MonoBehaviour
 
         if(Movement != Vector2.zero && !disableRotation)
         {
-            angle = Mathf.Atan2(Movement.y,Movement.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0,0,angle);
+            float yRot = Movement.x < 0 ? 180 : 0;
+            float zRot = 0;
+
+            if (Movement.y != 0) {
+                zRot = Movement.y > 0 ? 45 : -45;
+            }
+            transform.rotation = Quaternion.Euler(0,yRot, zRot);
         }
         ClampPosition();
     }

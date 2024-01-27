@@ -847,6 +847,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Singleton
       objectReference: {fileID: 0}
+    - target: {fileID: 3335275439454108977, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}
+      propertyPath: SoundList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335275439454108977, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}
+      propertyPath: SoundList.Array.data[1].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335275439454108977, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}
+      propertyPath: SoundList.Array.data[1].name
+      value: ButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335275439454108977, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}
+      propertyPath: SoundList.Array.data[0].sound
+      value: 
+      objectReference: {fileID: 8300000, guid: b51539109152e42448edc49233c28e91, type: 3}
+    - target: {fileID: 3335275439454108977, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}
+      propertyPath: SoundList.Array.data[1].sound
+      value: 
+      objectReference: {fileID: 8300000, guid: b51539109152e42448edc49233c28e91, type: 3}
+    - target: {fileID: 3335275439454108977, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}
+      propertyPath: SoundList.Array.data[1].volume
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 4741707849925552639, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25

@@ -14,7 +14,7 @@ public class DialogueManager : MonoBehaviour
 
     public LevelLoader TransitionAnimation;
     public GameObject LevelLoaderGameObject;
-
+    [SerializeField] private AudioManager audioManager;
     
 
     void Start()
@@ -22,6 +22,7 @@ public class DialogueManager : MonoBehaviour
         LevelLoaderGameObject = GameObject.Find("LevelLoader");
         TransitionAnimation = LevelLoaderGameObject.GetComponent<LevelLoader>();
         textComponent.text = string.Empty;
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         StartDialogue();
     }
 
@@ -31,6 +32,7 @@ public class DialogueManager : MonoBehaviour
         {
             if (textComponent.text == lines[index])
             {
+                audioManager.PlaySound("ButtonClick");
                 NextLine();
             }
             else
@@ -53,6 +55,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char c in lines[index].ToCharArray())
         {
             textComponent.text += c;
+            audioManager.PlaySound("DialogueSFX");
             yield return new WaitForSeconds(textSpeed);
         }
     }

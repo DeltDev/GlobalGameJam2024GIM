@@ -9,10 +9,12 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public static bool isPaused;
     public static string clickedButtonName = "";
+    [SerializeField] private AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
     {
         pauseMenu.SetActive(false);
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -22,9 +24,11 @@ public class PauseMenu : MonoBehaviour
         {
             if (isPaused)
             {
+                audioManager.PlaySound("ResumeSFX");
                 ResumeGame();
             } else
             {
+                audioManager.PlaySound("PauseSFX");
                 PauseGame();
             }
         }
@@ -33,6 +37,7 @@ public class PauseMenu : MonoBehaviour
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
+        audioManager.PlaySound("PauseSFX");
         Time.timeScale = 0f;
         isPaused = true;
     }
@@ -45,6 +50,7 @@ public class PauseMenu : MonoBehaviour
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
+        audioManager.PlaySound("ResumeSFX");
         Time.timeScale = 1f;
         isPaused = false;
         clickedButtonName = "";
@@ -54,6 +60,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+        audioManager.PlaySound("ButtonClick");
         isPaused = false;
         clickedButtonName = "";
     }
@@ -61,6 +68,7 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         clickedButtonName = "";
+        audioManager.PlaySound("ButtonClick");
         Application.Quit();
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Hyena : MonoBehaviour
 {
-    public Transform player;
     [Header("Hyena Settings")]
     public float speed = 1f;
     public float rotationSpeed = 10f;

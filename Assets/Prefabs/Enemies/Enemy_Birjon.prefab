@@ -431,15 +431,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   speed: 0.5
-  distanceToStartAttack: 1
+  distanceToStartAttack: 2.4
   attackDelay: 1.2
   postAttackDelay: 0.8
   projectilePrefab: {fileID: 6684732563116971704, guid: 94925c37c40a24840a3d6136043aaa82, type: 3}
-  numOfProjectiles: 5
-  projSpeed: 0.5
+  numOfProjectiles: 7
+  projSpeed: 4
   delayBetweenProjectiles: 0.2
-  amplitude: 1
-  frequency: 10
+  amplitude: 7.5
+  frequency: 20
 --- !u!61 &5746512878313084407
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -482,8 +482,8 @@ MonoBehaviour:
   CurrentHealth: 1
   PlayerCollider: {fileID: 5746512878313084407}
   slider: {fileID: 1236580512}
-  levelLoader: {fileID: 0}
   Self: {fileID: 7382127829774352728}
+  audioManager: {fileID: 0}
 --- !u!1001 &7382127830826395028
 PrefabInstance:
   m_ObjectHideFlags: 0

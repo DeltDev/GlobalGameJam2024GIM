@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,16 +9,14 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     public float MaxHealth;
     public float CurrentHealth = 1;
-    [SerializeField] private Collider2D PlayerCollider;
     [SerializeField] private Slider slider;
-    public GameObject levelLoader;
     public GameObject Self;
+    public Action OnDeath;
     [SerializeField] private AudioManager audioManager;
     void Start()
     {
         CurrentHealth = MaxHealth;
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
-        //levelLoader = GameObject.Find("LevelLoader");
     }
 
     // Update is called once per frame
@@ -39,9 +38,8 @@ public class EnemyHealth : MonoBehaviour
         audioManager.PlaySound("DamageSFX");
         if (CurrentHealth <= 0)
         {
-            
+            OnDeath?.Invoke();
             Destroy(Self);
-            levelLoader.GetComponent<LevelLoader>().LoadNextLevel();
         }
     }
 

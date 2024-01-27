@@ -19,6 +19,10 @@ public class Birjon : MonoBehaviour
     public float frequency = 10f;
     private bool isAttacking = false;
 
+    public void Start() {
+        this.player = GameObject.FindObjectOfType<PlayerHealth>().transform;
+    }
+
     private IEnumerator LaunchProjectiles() {
         yield return new WaitForSeconds(attackDelay);
 

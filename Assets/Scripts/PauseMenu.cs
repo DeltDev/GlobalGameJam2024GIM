@@ -67,7 +67,9 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        
         clickedButtonName = "";
+
         audioManager.PlaySound("ButtonClick");
         Application.Quit();
     }

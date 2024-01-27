@@ -14,11 +14,11 @@ public class EndScreen : MonoBehaviour
     private void Start()
     {
         highScoreObject.SetActive(false);
-        scoreText.text = "Score : " + ScoreManager.instance.score.ToString();
-        if (ScoreManager.instance.highScore < ScoreManager.instance.score)
+        scoreText.text = "Score : " + ScoreManager.instance.GetScore().ToString();
+        if (ScoreManager.instance.GetHighScore() < ScoreManager.instance.GetScore())
         {
             
-            PlayerPrefs.SetInt("highscore", ScoreManager.instance.score);
+            PlayerPrefs.SetInt("highscore", ScoreManager.instance.GetScore());
             highScoreObject.SetActive(true);
 
 

@@ -33,6 +33,7 @@ public class ButtonController : MonoBehaviour
     #region Exit Button
     public void ExitButton()
     {
+        
         FindObjectOfType<AudioManager>().PlaySound("ButtonClick");
         Application.Quit();
         Debug.Log("Aplikasi sudah keluar");

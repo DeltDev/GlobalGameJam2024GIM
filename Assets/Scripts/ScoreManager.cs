@@ -11,8 +11,8 @@ public class ScoreManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
 
-    public int score = 0;
-    public int highScore = 0;
+    int score = 0;
+    int highScore = 0;
 
     private void Awake()
     {
@@ -33,8 +33,18 @@ public class ScoreManager : MonoBehaviour
     {
         score += scoreGained;
         scoreText.text = "Score : " + score.ToString();
-        
-        
+        PlayerPrefs.SetInt("highscore", ScoreManager.instance.GetScore());
+
+    }
+
+    public int GetScore()
+    {
+        return score;
+    }
+
+    public int GetHighScore()
+    {
+        return highScore;
     }
 
 

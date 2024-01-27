@@ -121,14 +121,14 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: MenuButton
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.4935065, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 60
+      width: 77
       height: 15
     spriteID: 27ad4bffdb497564ca214a7dfda77b63
     spriteBone: []
@@ -153,7 +153,7 @@ ScriptedImporter:
       cellRect:
         x: 2
         y: 0
-        width: 60
+        width: 77
         height: 15
       spriteId: 27ad4bffdb497564ca214a7dfda77b63
     linkedCells: []
@@ -162,4 +162,4 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 64, y: 16}
+  canvasSize: {x: 80, y: 16}

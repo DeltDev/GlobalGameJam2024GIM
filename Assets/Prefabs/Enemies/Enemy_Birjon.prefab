@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7382127829774352731}
   - component: {fileID: 7382127829774352730}
+  - component: {fileID: 5746512878313084407}
   m_Layer: 0
   m_Name: Enemy_Birjon
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7382127829774352728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1051536, y: -0.039793134, z: 0.095111676}
+  m_LocalPosition: {x: 2, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -46,10 +47,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  speed: 0.5
   distanceToStartAttack: 1
+  attackDelay: 1.2
+  postAttackDelay: 0.8
   projectilePrefab: {fileID: 0}
   numOfProjectiles: 5
-  speed: 0.5
+  projSpeed: 0.5
+  delayBetweenProjectiles: 0.2
+  amplitude: 1
+  frequency: 10
+--- !u!61 &5746512878313084407
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7382127829774352728}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.046330214, y: -0.057231545}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9073396, y: 1.1144631}
+  m_EdgeRadius: 0
 --- !u!1001 &7382127830826395028
 PrefabInstance:
   m_ObjectHideFlags: 0

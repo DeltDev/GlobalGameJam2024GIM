@@ -14,8 +14,10 @@ public class ObjectiveBox : MonoBehaviour
 
 
     private RectTransform rectTransform;
+    private AudioManager audioManager;
     private void Awake() {
         rectTransform = GetComponent<RectTransform>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
     private void Start() {
@@ -25,8 +27,10 @@ public class ObjectiveBox : MonoBehaviour
 
     private IEnumerator ObjectiveBoxCor() {
         yield return new WaitForSeconds(delayBeforeAppearance);
+        audioManager.PlaySound("ObjectiveOn");
         rectTransform.DOLocalMove(appearPosition, open_closeDuration).SetEase(Ease.OutBack);
         yield return new WaitForSeconds(open_closeDuration + stayDuration);
+        audioManager.PlaySound("ObjectiveOff");
         rectTransform.DOLocalMove(disappearPosition, open_closeDuration).SetEase(Ease.InBack);
     }
 

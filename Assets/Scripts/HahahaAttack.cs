@@ -21,7 +21,7 @@ public class HahahaAttack : MonoBehaviour
     {
         if (!PauseMenu.isPaused)
         {
-            if (Input.GetMouseButtonDown(0) && canHahahaAttack)
+            if (Input.GetMouseButtonDown(0) && canHahahaAttack && !PauseMenu.clickedButtonName.Equals("PauseButton"))
             {
                 HahahahaAttack();
                 canHahahaAttack = false;

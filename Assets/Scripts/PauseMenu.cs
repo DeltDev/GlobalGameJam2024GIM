@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public static bool isPaused;
+    public static string clickedButtonName = "";
     // Start is called before the first frame update
     void Start()
     {
@@ -35,11 +37,17 @@ public class PauseMenu : MonoBehaviour
         isPaused = true;
     }
 
+    public void PauseButton()
+    {
+        clickedButtonName = EventSystem.current.currentSelectedGameObject.name;
+    }
+
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+        clickedButtonName = "";
     }
 
     public void GoToMainMenu()
@@ -47,10 +55,12 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
         isPaused = false;
+        clickedButtonName = "";
     }
 
     public void QuitGame()
     {
+        clickedButtonName = "";
         Application.Quit();
     }
 }

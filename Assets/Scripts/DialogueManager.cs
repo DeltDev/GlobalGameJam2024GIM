@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour
@@ -65,9 +66,12 @@ public class DialogueManager : MonoBehaviour
             StartCoroutine(TypeLine());
         } else
         {
+            Scene activeScene = SceneManager.GetActiveScene();
             gameObject.SetActive(false);
-            TransitionAnimation.LoadNextLevel();
-            FindObjectOfType<AudioManager>().PlaySound("ButtonClick");
+            if (activeScene.name.Equals("Prologue") || activeScene.name.Equals("Epilogue"))
+            {
+                TransitionAnimation.LoadNextLevel();
+            }
 
         }
     }

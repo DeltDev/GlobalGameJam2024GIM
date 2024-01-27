@@ -71,7 +71,7 @@ public class DialogueManager : MonoBehaviour
         {
             Scene activeScene = SceneManager.GetActiveScene();
             gameObject.SetActive(false);
-            if (activeScene.name.Equals("Prologue") || activeScene.name.Equals("Epilogue"))
+            if (activeScene.name.Equals("Prologue"))
             {
                 TransitionAnimation.LoadNextLevel();
             }

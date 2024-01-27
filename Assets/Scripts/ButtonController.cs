@@ -43,5 +43,14 @@ public class ButtonController : MonoBehaviour
         FindObjectOfType<AudioManager>().PlaySound("ButtonHover");
     }
     #endregion
-    
+
+    #region High Score Button
+
+    public void HighScoreButton()
+    {
+
+    }
+
+    #endregion
+
 }

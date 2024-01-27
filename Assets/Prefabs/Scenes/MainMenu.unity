@@ -186,7 +186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1687056862, guid: d4e335eb2b248ed4da98e00306070f11, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3157243838081904455, guid: d4e335eb2b248ed4da98e00306070f11, type: 3}
       propertyPath: m_Pivot.x
@@ -1335,8 +1335,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: PePeGa
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b2708b1a957adba48ac974530ddf1973, type: 2}
+  m_sharedMaterial: {fileID: 3772629302030454122, guid: b2708b1a957adba48ac974530ddf1973, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

@@ -10,9 +10,11 @@ public class PauseMenu : MonoBehaviour
     public static bool isPaused;
     public static string clickedButtonName = "";
     [SerializeField] private AudioManager audioManager;
+    public GameObject levelLoader;
     // Start is called before the first frame update
     void Start()
     {
+        levelLoader = GameObject.Find("LevelLoader");
         pauseMenu.SetActive(false);
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
@@ -54,6 +56,13 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
         clickedButtonName = "";
+    }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1f;
+        levelLoader.GetComponent<LevelLoader>().RestartLevel();
+        isPaused = false;
     }
 
     public void GoToMainMenu()

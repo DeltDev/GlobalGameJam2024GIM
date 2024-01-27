@@ -30,13 +30,13 @@ public class EndScreen : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        audioManager.PlaySound("ButtonSFX");
+        audioManager.PlaySound("ButtonClick");
         levelLoader.GetComponent<LevelLoader>().ToMainMenu();
     }
 
     public void QuitGame()
     {
-        audioManager.PlaySound("ButtonSFX");
+        audioManager.PlaySound("ButtonClick");
         PlayerPrefs.DeleteAll();
         Application.Quit();
     }

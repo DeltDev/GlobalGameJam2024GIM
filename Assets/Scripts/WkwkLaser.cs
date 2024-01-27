@@ -11,12 +11,14 @@ public class WkwkLaser : MonoBehaviour
     [SerializeField] private float ProjectileDespawnTime;
     [SerializeField] private int TickNumber;
     [SerializeField] private float TickSpeed;
+    [SerializeField] private AudioManager audioManager;
     private TopDownController TopDown;
     private bool canWkwkAttack;
     void Start()
     {
         canWkwkAttack = true;
         TopDown = GetComponent<TopDownController>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -27,6 +29,7 @@ public class WkwkLaser : MonoBehaviour
             //WkwkAttack();
             canWkwkAttack = false;
             TopDown.disableRotation= true;
+            audioManager.PlaySound("WKWKWKSFX");
             StartCoroutine(AttackCooldown(AttackCooldownTime, TickSpeed, TickNumber));
         }
     }

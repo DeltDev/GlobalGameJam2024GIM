@@ -60,15 +60,16 @@ public class PauseMenu : MonoBehaviour
 
     public void RestartGame()
     {
-        Time.timeScale = 1f;
+        
         levelLoader.GetComponent<LevelLoader>().RestartLevel();
+        Time.timeScale = 1f;
         isPaused = false;
     }
 
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        levelLoader.GetComponent<LevelLoader>().ToMainMenu();
         audioManager.PlaySound("ButtonClick");
         isPaused = false;
         clickedButtonName = "";

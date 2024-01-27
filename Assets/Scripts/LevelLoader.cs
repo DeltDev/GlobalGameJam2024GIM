@@ -17,6 +17,11 @@ public class LevelLoader : MonoBehaviour
         Debug.Log("Animation Loaded");
         StartCoroutine(LoadWithTransition(SceneManager.GetActiveScene().buildIndex));
     }
+    public void LoadPreviousLevel()
+    {
+        Debug.Log("Animation Loaded");
+        StartCoroutine(LoadWithTransition(SceneManager.GetActiveScene().buildIndex - 1));
+    }
     public void ToMainMenu()
     {
         StartCoroutine(LoadWithTransition(0));

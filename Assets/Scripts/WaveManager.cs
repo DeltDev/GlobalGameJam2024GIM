@@ -23,8 +23,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private float maxWaveSpawnDelay = 15f;
 
     // Magic Timestamp
-    float startWaitingNextWaveTS;
-    float lastSpawnTS;
+   Coroutine autoSpawnCoroutine = null;
 
     private void OnEnemyDeath() {
         enemiesAlive --;
@@ -47,8 +46,7 @@ public class WaveManager : MonoBehaviour
     
     public IEnumerator SpawnWave()
     {
-        lastSpawnTS = Time.time;
-        startWaitingNextWaveTS = Time.time;
+        if (autoSpawnCoroutine != null) StopCoroutine(autoSpawnCoroutine);
         yield return new WaitForSeconds(idleBetweenWave);
         int spawnAmount = (int) spawnAmountProgression.Evaluate((float) waveNumber/startSpawningFasterAfterWave);
         for (int i = 0; i < spawnAmount; i++)
@@ -69,18 +67,17 @@ public class WaveManager : MonoBehaviour
         }
         waveNumber++;
         if (waveNumber > startSpawningFasterAfterWave) { 
-            spawnDelayInWave -= 0.1f; Mathf.Clamp(spawnDelayInWave, 0.1f, 100f);
-            maxWaveSpawnDelay -= 0.8f; Mathf.Clamp(maxWaveSpawnDelay, 3f, 100f);
+            idleBetweenWave -= 0.2f; Mathf.Clamp(idleBetweenWave, 1f, 100f);
+            spawnDelayInWave -= 0.1f; Mathf.Clamp(spawnDelayInWave, 0.5f, 100f);
+            maxWaveSpawnDelay -= 0.8f; Mathf.Clamp(maxWaveSpawnDelay, 7f, 100f);
         }
 
-        StartCoroutine(InitNextSpawn());
+        autoSpawnCoroutine = StartCoroutine(InitNextSpawn());
     }
 
     IEnumerator InitNextSpawn() {
         yield return new WaitForSeconds(maxWaveSpawnDelay);
-        if (lastSpawnTS <= startWaitingNextWaveTS) { // the wave has not been started
-            StartNewWave();
-        } 
+        StartNewWave();
     }
 
     private GameObject SpawnEnemy(GameObject enemy, Vector2 position)

@@ -226,6 +226,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 5
   disableRotation: 0
+  clampPlayer:
+    minX: -5.5
+    maxX: 5.5
+    minY: -3.2
+    maxY: 1.5
 --- !u!50 &6593979560937692937
 Rigidbody2D:
   serializedVersion: 4
@@ -322,7 +327,7 @@ MonoBehaviour:
   TouchGrassDurationTime: 10
   TouchGrassCooldownTime: 15
   GrassHitbox: {fileID: 0}
-  player: {fileID: 6593979560937692943}
+  animator: {fileID: 0}
 --- !u!114 &4229986393048367552
 MonoBehaviour:
   m_ObjectHideFlags: 0

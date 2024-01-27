@@ -19,7 +19,12 @@ public class WaveManager : MonoBehaviour
     private int waveNumber = 1;
     [SerializeField] private int startSpawningFasterAfterWave = 5;
     private int enemiesAlive = 0;
-    private int totalWeightProbabilities;
+    private int totalWeightProbabilities; 
+    [SerializeField] private float maxWaveSpawnDelay = 15f;
+
+    // Magic Timestamp
+    float startWaitingNextWaveTS;
+    float lastSpawnTS;
 
     private void OnEnemyDeath() {
         enemiesAlive --;
@@ -42,9 +47,10 @@ public class WaveManager : MonoBehaviour
     
     public IEnumerator SpawnWave()
     {
+        lastSpawnTS = Time.time;
+        startWaitingNextWaveTS = Time.time;
         yield return new WaitForSeconds(idleBetweenWave);
         int spawnAmount = (int) spawnAmountProgression.Evaluate((float) waveNumber/startSpawningFasterAfterWave);
-        Debug.Log(spawnAmount);
         for (int i = 0; i < spawnAmount; i++)
         {
             GameObject enemy = GetGameObjectFromWavePrefabs();
@@ -62,6 +68,19 @@ public class WaveManager : MonoBehaviour
             yield return new WaitForSeconds(spawnDelayInWave);
         }
         waveNumber++;
+        if (waveNumber > startSpawningFasterAfterWave) { 
+            spawnDelayInWave -= 0.1f; Mathf.Clamp(spawnDelayInWave, 0.1f, 100f);
+            maxWaveSpawnDelay -= 0.8f; Mathf.Clamp(maxWaveSpawnDelay, 3f, 100f);
+        }
+
+        StartCoroutine(InitNextSpawn());
+    }
+
+    IEnumerator InitNextSpawn() {
+        yield return new WaitForSeconds(maxWaveSpawnDelay);
+        if (lastSpawnTS <= startWaitingNextWaveTS) { // the wave has not been started
+            StartNewWave();
+        } 
     }
 
     private GameObject SpawnEnemy(GameObject enemy, Vector2 position)

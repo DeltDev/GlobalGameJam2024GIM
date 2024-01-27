@@ -33,6 +33,7 @@ public class WkwkLaser : MonoBehaviour
 
     void WkwkAttack()
     {
+
         GameObject laser = Instantiate(WkwkLaserPrefab, ProjectileSpawnPosition.position, transform.rotation);
         //Rigidbody2D rb2D = bullet.GetComponent<Rigidbody2D>();
         //rb2D.AddForce(ProjectileSpawnPosition.right * ProjectileForce, ForceMode2D.Impulse);

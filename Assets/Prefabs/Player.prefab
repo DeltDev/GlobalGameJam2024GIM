@@ -281,12 +281,13 @@ GameObject:
   - component: {fileID: 6593979560937692939}
   - component: {fileID: 6593979560937692936}
   - component: {fileID: 6593979560937692937}
-  - component: {fileID: 6593979560937692933}
   - component: {fileID: 6593979560937692932}
   - component: {fileID: 6593979560937692935}
+  - component: {fileID: 6593979560937692933}
   - component: {fileID: 6593979560937692934}
   - component: {fileID: 4229986393048367552}
   - component: {fileID: 6448087704897971972}
+  - component: {fileID: 7058714206140738678}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -400,23 +401,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6593979560937692933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6593979560937692943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8951db01648886459e68da0949701a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HahahaProjectilePrefab: {fileID: 7456391905881898124, guid: cfe4c04bbe415104682d1ed9ef6ae9a5, type: 3}
-  ProjectileForce: 10
-  ProjectileSpawnPosition: {fileID: 6593979560888030723}
-  AttackCooldownTime: 4
-  ProjectileDespawnTime: 3
 --- !u!61 &6593979560937692932
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -459,6 +443,23 @@ MonoBehaviour:
   GrassAttackDamage: 0
   WkwkLaserDamage: 0
   GrimaceShakeDuration: 0
+--- !u!114 &6593979560937692933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6593979560937692943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8951db01648886459e68da0949701a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HahahaProjectilePrefab: {fileID: 7456391905881898124, guid: cfe4c04bbe415104682d1ed9ef6ae9a5, type: 3}
+  ProjectileForce: 10
+  ProjectileSpawnPosition: {fileID: 6593979560888030723}
+  AttackCooldownTime: 4
+  ProjectileDespawnTime: 3
 --- !u!114 &6593979560937692934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,8 +506,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerCollider: {fileID: 6593979560937692932}
-  CooldownTime: 10
+  CooldownTime: 3
   DespawnTime: 1
+--- !u!114 &7058714206140738678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6593979560937692943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b53610c28ec40f47845873fe6e33341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 20
+  CurrentHealth: 1
+  PlayerCollider: {fileID: 6593979560937692932}
+  fillImage: {fileID: 0}
+  slider: {fileID: 0}
+  levelLoader: {fileID: 0}
 --- !u!1001 &2359995480888335747
 PrefabInstance:
   m_ObjectHideFlags: 0

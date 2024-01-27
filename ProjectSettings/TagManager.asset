@@ -7,6 +7,8 @@ TagManager:
   - Projectile
   - GrassHitboxArea
   - Wall
+  - EnemyProjectile
+  - Laser
   layers:
   - Default
   - TransparentFX

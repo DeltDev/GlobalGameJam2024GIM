@@ -33,6 +33,7 @@ public class EnemyHealth : MonoBehaviour
 
     void TakeDamage(float amount)
     {
+        ScoreManager.instance.AddScore((int)Mathf.Round(amount));
         CurrentHealth -= amount;
         UpdateHealthBar(MaxHealth, CurrentHealth);
         audioManager.PlaySound("DamageSFX");

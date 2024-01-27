@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class WkwkLaser : MonoBehaviour
@@ -49,6 +50,7 @@ public class WkwkLaser : MonoBehaviour
         {
             yield return new WaitForSeconds(TickSpeed);
             GameObject laser = Instantiate(WkwkLaserPrefab, ProjectileSpawnPosition.position, transform.rotation);
+            Camera.main.transform.DOShakePosition(ProjectileDespawnTime + 1f, new Vector3(0.1f, 0.0075f, 0)).SetEase(Ease.OutSine);
             StartCoroutine(DespawnProjectile(ProjectileDespawnTime, laser));
         }
         TopDown.disableRotation = false;

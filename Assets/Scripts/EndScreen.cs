@@ -32,6 +32,7 @@ public class EndScreen : MonoBehaviour
 
     public void QuitGame()
     {
+        PlayerPrefs.DeleteAll();
         Application.Quit();
     }
 }

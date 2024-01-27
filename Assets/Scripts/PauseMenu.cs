@@ -71,6 +71,7 @@ public class PauseMenu : MonoBehaviour
         clickedButtonName = "";
 
         audioManager.PlaySound("ButtonClick");
+        PlayerPrefs.DeleteAll();
         Application.Quit();
     }
 }

@@ -11,6 +11,7 @@ public class WavePrefab {
 public class WaveManager : MonoBehaviour
 {   
     public Transform playerTr;
+    public float firstWaveSpawnDelay = 3;
     public float idleBetweenWave = 5f;
     public float spawnDelayInWave = 1f;
     public AnimationCurve spawnAmountProgression;
@@ -36,6 +37,11 @@ public class WaveManager : MonoBehaviour
         {
             totalWeightProbabilities += wavePrefab.weight;
         }
+        StartCoroutine(StartFirstWave());
+    }
+
+    private IEnumerator StartFirstWave() {
+        yield return new WaitForSeconds(firstWaveSpawnDelay);
         StartNewWave();
     }
 
@@ -68,7 +74,7 @@ public class WaveManager : MonoBehaviour
         waveNumber++;
         if (waveNumber > startSpawningFasterAfterWave) { 
             idleBetweenWave -= 0.2f; Mathf.Clamp(idleBetweenWave, 1f, 100f);
-            spawnDelayInWave -= 0.1f; Mathf.Clamp(spawnDelayInWave, 0.5f, 100f);
+            spawnDelayInWave -= 0.15f; Mathf.Clamp(spawnDelayInWave, 0.2f, 100f);
             maxWaveSpawnDelay -= 0.8f; Mathf.Clamp(maxWaveSpawnDelay, 7f, 100f);
         }
 

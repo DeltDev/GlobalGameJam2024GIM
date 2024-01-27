@@ -42,6 +42,7 @@ public class WaveManager : MonoBehaviour
     
     public IEnumerator SpawnWave()
     {
+        yield return new WaitForSeconds(idleBetweenWave);
         int spawnAmount = (int) spawnAmountProgression.Evaluate((float) waveNumber/startSpawningFasterAfterWave);
         Debug.Log(spawnAmount);
         for (int i = 0; i < spawnAmount; i++)

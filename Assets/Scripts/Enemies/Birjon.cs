@@ -45,6 +45,7 @@ public class Birjon : MonoBehaviour
 
     void Update()
     {
+        if (!player) return;
         if (isAttacking) return;
         
         Vector2 distanceVector = player.position - transform.position;

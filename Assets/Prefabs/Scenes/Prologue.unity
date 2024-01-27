@@ -612,17 +612,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 736085334}
   lines:
-  - "Once upon a time, there existed a creature feared by the citizens of the Laughing
-    Isles\u2026"
-  - ...an amalgamation of floating laughter called the HAHA-man.
+  - 'Once upon a time, there existed a bunch of creatures feared by the citizens
+    of the Laughing Isles that are called the laughing masters. '
+  - 'The laughing masters like to suck the laughter out of people, making them unable
+    to laugh again.  '
   - "One day, a brave warrior named Pepega set out on a journey to take down the
-    HAHA-man once and for all\u2026"
-  - and restore all the laughter for the citizens in the isles.
-  - He ventured into a cave beneath the mountains to face the HAHA-man and his laughing
-    armies.
-  - "Pepega has to go through THREE of his so-called laugh masters\u2026"
-  - "\u2026and then defeat the HAHA-man to earn his people\u2019s stolen joy."
+    laughing masters once and for all\u2026 "
+  - 'and restore all the laughter for the citizens in the isles. '
   textSpeed: 0.025
+  TransitionAnimation: {fileID: 0}
+  LevelLoaderGameObject: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1340295683
 GameObject:
   m_ObjectHideFlags: 0

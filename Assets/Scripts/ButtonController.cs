@@ -23,12 +23,7 @@ public class ButtonController : MonoBehaviour
     }
     #endregion
 
-    #region How To Play Button
-    public void HowToPlayButton()
-    {
-        FindObjectOfType<AudioManager>().PlaySound("ButtonClick");
-    }
-    #endregion
+   
 
     #region Exit Button
     public void ExitButton()
@@ -45,11 +40,23 @@ public class ButtonController : MonoBehaviour
     }
     #endregion
 
-    #region High Score Button
+    #region How to Play Button
 
-    public void HighScoreButton()
+    public void HowToPlayButton()
     {
+        TransitionAnimation.LoadSpecificLevel("HowToPlay");
+        FindObjectOfType<AudioManager>().PlaySound("ButtonClick");
+    }
 
+    #endregion
+
+    #region Credits Button
+
+    public void CreditsButton()
+    {
+        // Make sure credits scene is in the 5th index
+        TransitionAnimation.LoadSpecificLevel("Credits");
+        FindObjectOfType<AudioManager>().PlaySound("ButtonClick");
     }
 
     #endregion

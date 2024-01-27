@@ -22,6 +22,11 @@ public class LevelLoader : MonoBehaviour
         Debug.Log("Animation Loaded");
         StartCoroutine(LoadWithTransition(SceneManager.GetActiveScene().buildIndex - 1));
     }
+    public void LoadSpecificLevel(string LevelName)
+    {
+        Debug.Log("Animation Loaded");
+        StartCoroutine(LoadSceneNameWithTransition(LevelName));
+    }
     public void ToMainMenu()
     {
         StartCoroutine(LoadWithTransition(0));
@@ -31,6 +36,13 @@ public class LevelLoader : MonoBehaviour
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(LevelIdx);
+    }
+
+    IEnumerator LoadSceneNameWithTransition(string LevelName)
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(LevelName);
     }
 
 }

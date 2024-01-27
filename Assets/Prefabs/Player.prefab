@@ -322,6 +322,7 @@ MonoBehaviour:
   TouchGrassDurationTime: 10
   TouchGrassCooldownTime: 15
   GrassHitbox: {fileID: 0}
+  player: {fileID: 6593979560937692943}
 --- !u!114 &4229986393048367552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,6 +375,7 @@ MonoBehaviour:
   fillImage: {fileID: 0}
   slider: {fileID: 0}
   levelLoader: {fileID: 0}
+  HealthGain: 0
   audioManager: {fileID: 0}
 --- !u!61 &543339970
 BoxCollider2D:

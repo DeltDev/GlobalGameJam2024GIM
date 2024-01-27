@@ -8,6 +8,7 @@ public class TouchGrassAttack : MonoBehaviour
     [SerializeField] private float TouchGrassDurationTime;
     [SerializeField] private float TouchGrassCooldownTime;
     [SerializeField] private GameObject GrassHitbox;
+    [SerializeField] private Animator animator;
     private bool canGrassAttack;
 
     private void Start()
@@ -32,6 +33,8 @@ public class TouchGrassAttack : MonoBehaviour
     IEnumerator TouchGrassDuration(float Duration)
     {
         yield return new WaitForSeconds(Duration);
+        animator.SetTrigger("CloseGrass");
+        yield return new WaitForSeconds(0.5f);
         GrassHitbox.SetActive(false);
     }
     IEnumerator TouchGrassCooldown(float CooldownTime)

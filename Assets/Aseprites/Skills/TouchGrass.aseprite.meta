@@ -1,8 +1,18 @@
 fileFormatVersion: 2
-guid: d48429b82e91f7f4d8115071df88476b
+guid: 49da8a986416d11488b88353fd243ac9
 ScriptedImporter:
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: close
+    second: {fileID: 7400000, guid: 29dad2227ce02f240ba6095b47521c0c, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: open
+    second: {fileID: 7400000, guid: cd6bef2a0bb74ec44a116b6092b7a361, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -33,7 +43,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 16
+    spritePixelsToUnits: 8
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -73,7 +83,7 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 4
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -86,7 +96,7 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 4
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -95,7 +105,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638419291524615507
+  platformSettingsDirtyTick: 638419827869082255
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,18 +129,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: WKWKLaser
+  - name: TouchGrass_Frame_0
     originalName: 
-    pivot: {x: -0.016393442, y: 0.5}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 28
-      width: 122
-      height: 12
-    spriteID: 8c33a3ae5253d4c4cbb492571d3abab6
+      x: 78
+      y: 4
+      width: 14
+      height: 14
+    spriteID: a6985d6882245814e91c4d78907e8608
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -138,19 +148,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 28}
-  - name: WKWKLaser_Frame_1
+    uvTransform: {x: 78, y: 4}
+  - name: TouchGrass_Frame_1
     originalName: 
-    pivot: {x: -0.024590163, y: 0.4166667}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 48
-      width: 122
-      height: 12
-    spriteID: e18aeb03f3eff2b4881ddea79446e18a
+      x: 43
+      y: 74
+      width: 20
+      height: 20
+    spriteID: 78b347f49044d124e9056439006a763a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -158,19 +168,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 48}
-  - name: WKWKLaser_Frame_2
+    uvTransform: {x: 43, y: 74}
+  - name: TouchGrass_Frame_2
     originalName: 
-    pivot: {x: -0.024590163, y: 0.5}
+    pivot: {x: 0.5185185, y: 0.4814815}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 68
-      width: 122
-      height: 12
-    spriteID: 55464038bbd3f0441993803e2671e6df
+      x: 43
+      y: 4
+      width: 27
+      height: 27
+    spriteID: 1cb884330bd41bb4186ce1ed8118fdfb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -178,19 +188,39 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 68}
-  - name: WKWKLaser_Frame_3
+    uvTransform: {x: 43, y: 4}
+  - name: TouchGrass_Frame_3
     originalName: 
-    pivot: {x: -0.015873017, y: 0.5}
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 44
+      width: 30
+      height: 30
+    spriteID: cf0277edb5e2413409fdc8b399f6b468
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 44}
+  - name: TouchGrass_Frame_4
+    originalName: 
+    pivot: {x: 0.516129, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 126
-      height: 16
-    spriteID: f5883268ca0b9c74ba1f422387cafaf4
+      width: 31
+      height: 32
+    spriteID: a473a137024de764d84d7a52697725d9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -199,47 +229,167 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: TouchGrass_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 82
+      width: 30
+      height: 30
+    spriteID: 72b0c2f49a27a9a45a06d69932c60a78
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 82}
+  - name: TouchGrass_Frame_6
+    originalName: 
+    pivot: {x: 0.5185185, y: 0.4814815}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 43
+      y: 39
+      width: 27
+      height: 27
+    spriteID: 602f2d77ff0449a4dba4cf31cec81466
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 43, y: 39}
+  - name: TouchGrass_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 43
+      y: 102
+      width: 20
+      height: 20
+    spriteID: 859b7c377edae1b45958454a36c4cd3a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 43, y: 102}
+  - name: TouchGrass_Frame_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 26
+      width: 14
+      height: 14
+    spriteID: 4c2885e5b8c9f87429459acbb3037441
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 26}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1423990871
-    name: WKWKLaser
+    guid: -15937627
+    name: TouchGrass
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: WKWKLaser_Frame_0
+    - name: TouchGrass_Frame_0
       frameIndex: 0
       cellRect:
-        x: 2
-        y: 2
-        width: 122
-        height: 12
-      spriteId: 8c33a3ae5253d4c4cbb492571d3abab6
-    - name: WKWKLaser_Frame_1
+        x: 9
+        y: 9
+        width: 14
+        height: 14
+      spriteId: a6985d6882245814e91c4d78907e8608
+    - name: TouchGrass_Frame_1
       frameIndex: 1
       cellRect:
-        x: 3
-        y: 3
-        width: 122
-        height: 12
-      spriteId: e18aeb03f3eff2b4881ddea79446e18a
-    - name: WKWKLaser_Frame_2
+        x: 6
+        y: 6
+        width: 20
+        height: 20
+      spriteId: 78b347f49044d124e9056439006a763a
+    - name: TouchGrass_Frame_2
       frameIndex: 2
       cellRect:
-        x: 3
-        y: 2
-        width: 122
-        height: 12
-      spriteId: 55464038bbd3f0441993803e2671e6df
-    - name: WKWKLaser_Frame_3
+        x: 2
+        y: 3
+        width: 27
+        height: 27
+      spriteId: 1cb884330bd41bb4186ce1ed8118fdfb
+    - name: TouchGrass_Frame_3
       frameIndex: 3
       cellRect:
-        x: 2
+        x: 1
+        y: 1
+        width: 30
+        height: 30
+      spriteId: cf0277edb5e2413409fdc8b399f6b468
+    - name: TouchGrass_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 0
         y: 0
-        width: 126
-        height: 16
-      spriteId: f5883268ca0b9c74ba1f422387cafaf4
+        width: 31
+        height: 32
+      spriteId: a473a137024de764d84d7a52697725d9
+    - name: TouchGrass_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 1
+        y: 1
+        width: 30
+        height: 30
+      spriteId: 72b0c2f49a27a9a45a06d69932c60a78
+    - name: TouchGrass_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 2
+        y: 3
+        width: 27
+        height: 27
+      spriteId: 602f2d77ff0449a4dba4cf31cec81466
+    - name: TouchGrass_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 6
+        y: 6
+        width: 20
+        height: 20
+      spriteId: 859b7c377edae1b45958454a36c4cd3a
+    - name: TouchGrass_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 9
+        y: 9
+        width: 14
+        height: 14
+      spriteId: 4c2885e5b8c9f87429459acbb3037441
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -279,4 +429,4 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 128, y: 16}
+  canvasSize: {x: 32, y: 32}

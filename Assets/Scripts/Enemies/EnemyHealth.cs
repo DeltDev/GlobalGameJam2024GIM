@@ -12,17 +12,11 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private Slider slider;
     public GameObject Self;
     public Action OnDeath;
-    [SerializeField] private AudioManager audioManager;
+    private AudioManager audioManager;
     void Start()
     {
         CurrentHealth = MaxHealth;
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void UpdateHealthBar(float MaxHealth, float CurrentHealth)

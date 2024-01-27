@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5280911977700915210}
   - component: {fileID: 5280911977700915208}
   - component: {fileID: 5280911977700915209}
+  - component: {fileID: 2846966842673557968}
   m_Layer: 0
   m_Name: Heart
   m_TagString: ExtraHP
@@ -81,6 +82,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7783124, y: 0.5566237}
   m_EdgeRadius: 0
+--- !u!114 &2846966842673557968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5280911977700915214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e83c5666e11aa954eadb8d556b11a59a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DespawnTime: 5
 --- !u!1001 &5631517135583745482
 PrefabInstance:
   m_ObjectHideFlags: 0

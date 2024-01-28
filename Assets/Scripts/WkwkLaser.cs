@@ -1,7 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WkwkLaser : MonoBehaviour
 {
@@ -12,9 +12,11 @@ public class WkwkLaser : MonoBehaviour
     [SerializeField] private float ProjectileDespawnTime;
     [SerializeField] private int TickNumber;
     [SerializeField] private float TickSpeed;
-    [SerializeField] private AudioManager audioManager;
+    private AudioManager audioManager;
     private TopDownController TopDown;
     private bool canWkwkAttack;
+
+    [SerializeField] private Image cooldownRadialProgress;
     void Start()
     {
         canWkwkAttack = true;
@@ -31,17 +33,9 @@ public class WkwkLaser : MonoBehaviour
             canWkwkAttack = false;
             TopDown.disableRotation= true;
             audioManager.PlaySound("WKWKWKSFX");
+            StartCooldownUI(AttackCooldownTime);
             StartCoroutine(AttackCooldown(AttackCooldownTime, TickSpeed, TickNumber));
         }
-    }
-
-    void WkwkAttack()
-    {
-
-        GameObject laser = Instantiate(WkwkLaserPrefab, ProjectileSpawnPosition.position, transform.rotation);
-        //Rigidbody2D rb2D = bullet.GetComponent<Rigidbody2D>();
-        //rb2D.AddForce(ProjectileSpawnPosition.right * ProjectileForce, ForceMode2D.Impulse);
-        StartCoroutine(DespawnProjectile(ProjectileDespawnTime, laser));
     }
 
     IEnumerator AttackCooldown(float CooldownTime, float TickSpeed, int TickNumber)
@@ -65,4 +59,11 @@ public class WkwkLaser : MonoBehaviour
         
         Destroy(laser);
     }
+
+    void StartCooldownUI(float cooldownTime)
+    {
+        cooldownRadialProgress.fillAmount = 0;
+        cooldownRadialProgress.DOFillAmount(1, cooldownTime).SetEase(Ease.Linear);
+    }
+
 }

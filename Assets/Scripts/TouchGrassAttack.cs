@@ -1,7 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
+using UnityEngine.UI;
 
 public class TouchGrassAttack : MonoBehaviour
 {
@@ -11,6 +11,7 @@ public class TouchGrassAttack : MonoBehaviour
     [SerializeField] private Animator animator;
     private bool canGrassAttack;
     private AudioManager audioManager;
+    [SerializeField] private Image cooldownRadialProgress;
     private void Start()
     {
         canGrassAttack= true;
@@ -23,6 +24,7 @@ public class TouchGrassAttack : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.G) && canGrassAttack)
             {
+                StartCooldownUI(TouchGrassCooldownTime);
                 GrassHitbox.SetActive(true);
                 canGrassAttack = false;
                 audioManager.PlaySound("GrassSFX");
@@ -44,4 +46,11 @@ public class TouchGrassAttack : MonoBehaviour
         yield return new WaitForSeconds(CooldownTime);
         canGrassAttack= true;
     }
+
+    void StartCooldownUI(float cooldownTime)
+    {
+        cooldownRadialProgress.fillAmount = 0;
+        cooldownRadialProgress.DOFillAmount(1, cooldownTime).SetEase(Ease.Linear);
+    }
+
 }

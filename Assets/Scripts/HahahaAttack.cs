@@ -1,5 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class HahahaAttack : MonoBehaviour
@@ -11,7 +12,8 @@ public class HahahaAttack : MonoBehaviour
     [SerializeField] private float AttackCooldownTime;
     [SerializeField] private float ProjectileDespawnTime;
     private bool canHahahaAttack;
-    [SerializeField] private AudioManager audioManager;
+    private AudioManager audioManager;
+    [SerializeField] private Image cooldownRadialProgress;
     void Start()
     {
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
@@ -25,6 +27,7 @@ public class HahahaAttack : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0) && canHahahaAttack && !PauseMenu.clickedButtonName.Equals("PauseButton"))
             {
+                StartCooldownUI(AttackCooldownTime);
                 HahahahaAttack();
                 canHahahaAttack = false;
                 StartCoroutine(AttackCooldown(AttackCooldownTime));
@@ -52,5 +55,11 @@ public class HahahaAttack : MonoBehaviour
     {
         yield return new WaitForSeconds(DespawnTime);
         Destroy(bullet);
+    }
+
+    void StartCooldownUI(float cooldownTime)
+    {
+        cooldownRadialProgress.fillAmount = 0;
+        cooldownRadialProgress.DOFillAmount(1, cooldownTime).SetEase(Ease.Linear);
     }
 }

@@ -46,7 +46,6 @@ public class HeartManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             int rand = Random.Range(1,MaximumSpawnChanceRange);
-            Debug.Log(rand);
             if(rand == 1)
             {
                 SpawnHeart(Heart, getRandomPosition());

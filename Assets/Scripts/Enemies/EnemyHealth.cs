@@ -33,6 +33,7 @@ public class EnemyHealth : MonoBehaviour
         if (CurrentHealth <= 0)
         {
             OnDeath?.Invoke();
+            audioManager.PlaySound("GameOverSFX");
             Destroy(Self);
         }
     }

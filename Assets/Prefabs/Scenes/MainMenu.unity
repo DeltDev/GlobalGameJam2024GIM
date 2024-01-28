@@ -2038,7 +2038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3335275439454108977, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}
       propertyPath: SoundList.Array.size
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3335275439454108977, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}
       propertyPath: SoundList.Array.data[0].loop
@@ -2103,6 +2103,10 @@ PrefabInstance:
     - target: {fileID: 3335275439454108977, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}
       propertyPath: SoundList.Array.data[13].name
       value: EnemySpawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335275439454108977, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}
+      propertyPath: SoundList.Array.data[14].name
+      value: PotionSpawn
       objectReference: {fileID: 0}
     - target: {fileID: 3335275439454108977, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}
       propertyPath: SoundList.Array.data[1].sound
@@ -2193,6 +2197,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 1c21e8c64a27530489cf67a9a9e74ae0, type: 3}
     - target: {fileID: 3335275439454108977, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}
+      propertyPath: SoundList.Array.data[14].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335275439454108977, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}
+      propertyPath: SoundList.Array.data[14].sound
+      value: 
+      objectReference: {fileID: 8300000, guid: fcec491c7acff6d4a87d8b64bdcc5ebc, type: 3}
+    - target: {fileID: 3335275439454108977, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}
       propertyPath: SoundList.Array.data[1].volume
       value: 0.8
       objectReference: {fileID: 0}
@@ -2206,7 +2218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3335275439454108977, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}
       propertyPath: SoundList.Array.data[5].volume
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3335275439454108977, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}
       propertyPath: SoundList.Array.data[6].volume
@@ -2238,6 +2250,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3335275439454108977, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}
       propertyPath: SoundList.Array.data[13].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335275439454108977, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}
+      propertyPath: SoundList.Array.data[14].volume
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4916931026432627108, guid: 577fd2b3914cb4f4ab37d4d90daa05df, type: 3}

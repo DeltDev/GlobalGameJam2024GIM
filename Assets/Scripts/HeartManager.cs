@@ -11,9 +11,11 @@ public class HeartManager : MonoBehaviour
     [SerializeField] private GameObject Heart;
     [SerializeField] private int MaximumSpawnChanceRange;
     private Vector2 randomPosition;
+    private AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         StartCoroutine(SpawnHearts());  
     }
 
@@ -25,6 +27,7 @@ public class HeartManager : MonoBehaviour
 
     private GameObject SpawnHeart(GameObject heart, Vector2 RandomPosition)
     {
+        audioManager.PlaySound("PotionSpawn");
         return Instantiate(heart, RandomPosition, Quaternion.identity);
     }
 

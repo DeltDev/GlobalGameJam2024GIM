@@ -125,6 +125,11 @@ public class WaveManager : MonoBehaviour
 
             randomPosition = new Vector2(randomX, randomY);
 
+            if (playerTr == null)
+            {
+                break;
+            }
+
         } while (Vector2.Distance(randomPosition, playerTr.position) < 1.5f);
 
         return randomPosition;

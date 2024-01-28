@@ -13,10 +13,13 @@ public class EnemyHealth : MonoBehaviour
     public GameObject Self;
     public Action OnDeath;
     private AudioManager audioManager;
+    [SerializeField] private GameObject SmokeParticle;
+    private ParticleSystem SmokeVFX;
     void Start()
     {
         CurrentHealth = MaxHealth;
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        SmokeVFX = SmokeParticle.GetComponent<ParticleSystem>();
     }
 
     public void UpdateHealthBar(float MaxHealth, float CurrentHealth)
@@ -34,7 +37,11 @@ public class EnemyHealth : MonoBehaviour
         {
             OnDeath?.Invoke();
             audioManager.PlaySound("GameOverSFX");
+            SmokeVFX.Play();
+            SmokeParticle.transform.parent = null;
             Destroy(Self);
+            
+            
         }
     }
 
@@ -56,6 +63,4 @@ public class EnemyHealth : MonoBehaviour
             TakeDamage(1);
         }
     }
-
-
 }

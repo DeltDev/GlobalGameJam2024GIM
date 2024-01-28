@@ -19,6 +19,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float CooldownTime;
     [SerializeField] private float Invincibility;
     [SerializeField] private AudioManager audioManager;
+    [SerializeField] private GameObject SmokeParticle;
+    private ParticleSystem SmokeVFX;
     void Start()
     {
         //slider = GetComponent<slider>();
@@ -29,6 +31,7 @@ public class PlayerHealth : MonoBehaviour
         CurrentHealth = MaxHealth;
         levelLoader = GameObject.Find("LevelLoader");
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        SmokeVFX = SmokeParticle.GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -45,6 +48,7 @@ public class PlayerHealth : MonoBehaviour
     void Die()
     {
         canDamage = false;
+
         StartCoroutine(DespawnProjectile(Invincibility, PlayerCollider));
     }
 
@@ -75,7 +79,12 @@ public class PlayerHealth : MonoBehaviour
             if (CurrentHealth <= 0)
             {
                 audioManager.PlaySound("GameOverSFX");
+                audioManager.PlaySound("GameOverSFX");
+                SmokeVFX.Play();
+                SmokeParticle.transform.position = transform.position;
+                SmokeParticle.transform.parent = null;
                 Destroy(GameObject.Find("Player"));
+
                 levelLoader.GetComponent<LevelLoader>().LoadNextLevel();
             }
         }

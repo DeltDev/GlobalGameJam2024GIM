@@ -985,11 +985,8 @@ MonoBehaviour:
     Right-Click: WKWKWK-Laser
 
 
-    Space:
-    Grimace-Shake
-
-
-    G: Touch-Grass'
+    G:
+    Touch-Grass'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b2708b1a957adba48ac974530ddf1973, type: 2}
   m_sharedMaterial: {fileID: 3772629302030454122, guid: b2708b1a957adba48ac974530ddf1973, type: 2}

@@ -34,12 +34,12 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("space") && canActivate)
+        /*if (Input.GetKey("space") && canActivate)
         {
             Die();
             canActivate = false;
             StartCoroutine(Cooldown(CooldownTime));
-        }
+        }*/
     }
 
     void Die()

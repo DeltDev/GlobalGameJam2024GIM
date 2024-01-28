@@ -10,11 +10,12 @@ public class TouchGrassAttack : MonoBehaviour
     [SerializeField] private GameObject GrassHitbox;
     [SerializeField] private Animator animator;
     private bool canGrassAttack;
-
+    private AudioManager audioManager;
     private void Start()
     {
         canGrassAttack= true;
         GrassHitbox.SetActive(false);
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();    
     }
     private void Update()
     {
@@ -24,6 +25,7 @@ public class TouchGrassAttack : MonoBehaviour
             {
                 GrassHitbox.SetActive(true);
                 canGrassAttack = false;
+                audioManager.PlaySound("GrassSFX");
                 StartCoroutine(TouchGrassDuration(TouchGrassDurationTime));
                 StartCoroutine(TouchGrassCooldown(TouchGrassCooldownTime));
             }

@@ -60,7 +60,7 @@ public class PauseMenu : MonoBehaviour
 
     public void RestartGame()
     {
-        
+        audioManager.PlaySound("ButtonClick");
         levelLoader.GetComponent<LevelLoader>().RestartLevel();
         Time.timeScale = 1f;
         isPaused = false;

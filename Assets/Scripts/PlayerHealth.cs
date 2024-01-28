@@ -89,6 +89,7 @@ public class PlayerHealth : MonoBehaviour
         //}
         if (collision.tag == "ExtraHP")
         {
+            audioManager.PlaySound("PotionSFX");
             TakeDamage(-HealthGain);
             Destroy(collision.gameObject);
             if (CurrentHealth > MaxHealth)

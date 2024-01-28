@@ -22,7 +22,7 @@ public class WaveManager : MonoBehaviour
     private int enemiesAlive = 0;
     private int totalWeightProbabilities; 
     [SerializeField] private float maxWaveSpawnDelay = 15f;
-
+    private AudioManager audioManager;
     // Magic Timestamp
    Coroutine autoSpawnCoroutine = null;
 
@@ -38,6 +38,7 @@ public class WaveManager : MonoBehaviour
             totalWeightProbabilities += wavePrefab.weight;
         }
         StartCoroutine(StartFirstWave());
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
     private IEnumerator StartFirstWave() {
@@ -88,6 +89,7 @@ public class WaveManager : MonoBehaviour
 
     private GameObject SpawnEnemy(GameObject enemy, Vector2 position)
     {
+        audioManager.PlaySound("EnemySpawn");
         return Instantiate(enemy, position, Quaternion.identity);
     }
     private GameObject GetGameObjectFromWavePrefabs()

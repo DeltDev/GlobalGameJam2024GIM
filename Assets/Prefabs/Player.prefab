@@ -184,7 +184,6 @@ GameObject:
   - component: {fileID: 6593979560937692933}
   - component: {fileID: 6593979560937692934}
   - component: {fileID: 4229986393048367552}
-  - component: {fileID: 6448087704897971972}
   - component: {fileID: 7058714206140738678}
   - component: {fileID: 543339970}
   m_Layer: 0
@@ -347,21 +346,6 @@ MonoBehaviour:
   TickNumber: 10
   TickSpeed: 0.1
   audioManager: {fileID: 0}
---- !u!114 &6448087704897971972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6593979560937692943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09fee94bef6754b4c89adf84f801f212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 6593979560937692932}
-  CooldownTime: 3
-  DespawnTime: 1
 --- !u!114 &7058714206140738678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,13 +358,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b53610c28ec40f47845873fe6e33341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 50
+  MaxHealth: 30
   CurrentHealth: 1
   PlayerCollider: {fileID: 6593979560937692932}
   fillImage: {fileID: 0}
   slider: {fileID: 0}
   levelLoader: {fileID: 0}
-  HealthGain: 0
+  HealthGain: 5
+  CooldownTime: 0
+  Invincibility: 0
   audioManager: {fileID: 0}
 --- !u!61 &543339970
 BoxCollider2D:

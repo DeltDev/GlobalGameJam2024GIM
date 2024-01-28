@@ -6,8 +6,8 @@ public class HyenaProjectile : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
-            // other.GetComponent<PlayerController>().TakeDamage(1);
-            // Destroy(gameObject);
+            other.GetComponent<PlayerHealth>().TakeDamage(1);
+            Destroy(gameObject);
         } else if (other.CompareTag("Wall")) {
             Destroy(gameObject);
         }

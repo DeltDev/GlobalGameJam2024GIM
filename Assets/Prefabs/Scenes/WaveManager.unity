@@ -1269,6 +1269,14 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.14767158
       objectReference: {fileID: 0}
+    - target: {fileID: 6593979560937692933, guid: 339b1c6b88a46fc4bbfff08d1d377b3e, type: 3}
+      propertyPath: AttackCooldownTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6593979560937692933, guid: 339b1c6b88a46fc4bbfff08d1d377b3e, type: 3}
+      propertyPath: ProjectileDespawnTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6593979560937692934, guid: 339b1c6b88a46fc4bbfff08d1d377b3e, type: 3}
       propertyPath: animator
       value: 
@@ -1338,15 +1346,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1687056863}
     - target: {fileID: 7058714206140738678, guid: 339b1c6b88a46fc4bbfff08d1d377b3e, type: 3}
+      propertyPath: MaxHealth
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7058714206140738678, guid: 339b1c6b88a46fc4bbfff08d1d377b3e, type: 3}
       propertyPath: fillImage
       value: 
       objectReference: {fileID: 785667449}
     - target: {fileID: 7058714206140738678, guid: 339b1c6b88a46fc4bbfff08d1d377b3e, type: 3}
       propertyPath: HealthGain
-      value: 25
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7058714206140738678, guid: 339b1c6b88a46fc4bbfff08d1d377b3e, type: 3}
+      propertyPath: CooldownTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7058714206140738678, guid: 339b1c6b88a46fc4bbfff08d1d377b3e, type: 3}
+      propertyPath: Invincibility
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6593979560937692939, guid: 339b1c6b88a46fc4bbfff08d1d377b3e, type: 3}
+    - {fileID: 6448087704897971972, guid: 339b1c6b88a46fc4bbfff08d1d377b3e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 339b1c6b88a46fc4bbfff08d1d377b3e, type: 3}
 --- !u!1 &853437323 stripped
 GameObject:
